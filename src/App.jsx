@@ -1,38 +1,32 @@
-import { useState } from 'react'
-import './App.css'
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from './components/Home';
-import Register from './components/Register';
-import Login from './components/Login';
-import Profile from './components/Profile';
-import Cart from './components/Cart';
-import Product from './components/Product';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import SignupPage from "./pages/SignupPage";  
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
+import HomePage from "./components/HomePage";
+import ProductListPage from "./pages/ProductListPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+import EditProductPage from "./pages/EditProductPage";
+import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
 
-
+ 
 function App() {
-  
-
   return (
-    <>
-      
-      
-            
-              <Header />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/products" element={<Product />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/cart" element={<Cart />} />
-              </Routes>
-              <Footer />
-            
-          
-    </>
-  )
+    <div className="App">
+      <Navbar />
+ 
+      <Routes>      
+        <Route path="/" element={ <HomePage /> } />
+        <Route path="/products" element={ <IsPrivate> <ProductListPage /> </IsPrivate> } />
+        <Route path="/products/:productId" element={ <IsPrivate> <ProductDetailsPage /> </IsPrivate> } />
+        <Route path="/products/edit/:productId" element={ <IsPrivate> <EditProductPage /> </IsPrivate> } />
+        
+       
+        <Route path="/signup" element={ <IsAnon> <SignupPage /> </IsAnon> } />
+        <Route path="/login" element={ <IsAnon> <LoginPage /> </IsAnon> } />
+      </Routes>
+    </div>
+  );
 }
-
-export default App
+ 
+export default App;
