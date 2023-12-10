@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { useContext,useState } from 'react'
 import { CartContext } from '../context/cart.jsx'
 
- function Cart ({showModal, toggle}) {
+export default function Cart ({showModal, toggle}) {
 
   const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext)
   const [open, setOpen] = useState(true)
@@ -77,5 +77,3 @@ Cart.propTypes = {
   showModal: PropTypes.bool,
   toggle: PropTypes.func
 }
-
-export default Cart
