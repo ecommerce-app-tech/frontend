@@ -20,7 +20,7 @@ function NavbarComponent() {
 
           {isLoggedIn && (
             <>
-              <Link to="/projects">All Proroducts</Link>
+              <Link to="/products">All Proroducts</Link>
               <button onClick={logOutUser}>Logout</button>
               <span>{user && user.name}</span>
             </>
@@ -30,17 +30,12 @@ function NavbarComponent() {
             <>
               <Link to="/signup"> Sign Up</Link>
               <Link to="/login"> Login </Link>
-              <Button onClick={handleShow}>cart  item</Button>
+            
             </>
           )}
         </Navbar.Collapse>
       </Navbar>
-      <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-            <Modal.Title>Shopping Cart</Modal.Title>
-            </Modal.Header >
-            <Modal.Body>Modal body</Modal.Body>
-      </Modal>
+      
     </>
   );
 }

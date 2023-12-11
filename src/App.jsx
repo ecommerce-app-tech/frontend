@@ -10,9 +10,7 @@ import NavbarComponent from "./components/Navbar";
 import Cart from "./components/Cart"
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import AddProductPage from "./pages/AddProductPage";
 
 
  
@@ -28,7 +26,7 @@ function App() {
         <Route path="/products" element={ <Product />  }/>
         <Route path="/products/:productId" element={ <IsPrivate> <ProductDetailsPage /> </IsPrivate> } />
         <Route path="/products/edit/:productId" element={ <IsPrivate> <EditProductPage /> </IsPrivate> } />
-        
+        <Route path="/addproduct" element={<AddProductPage/>}/>
         <Route path="/signup" element={ <IsAnon> <SignupPage /> </IsAnon> } />
         <Route path="/login" element={ <IsAnon> <LoginPage /> </IsAnon> } />
        
