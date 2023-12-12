@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-const API_URL = "http://localhost:5005";
+
 
 function AddProductPage() {
   const [name, setName] = useState("");
@@ -25,7 +25,7 @@ function AddProductPage() {
     };
 
     axios
-      .post(`${API_URL}/api/product`, requestBody)
+      .post(`${import.meta.env.VITE_API_URL}/api/product`, requestBody)
       .then(() => {
         navigate("/addproduct");
       })

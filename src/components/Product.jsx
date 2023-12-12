@@ -14,11 +14,11 @@ export default function Products() {
   const toggle = () => {
     setshowModal(!showModal);
   };
-  const API_URL = "http://localhost:5005";
+
 
   const getProducts = () => {
     axios
-      .get(API_URL + "/api/product")
+      .get(`${import.meta.env.VITE_API_URL}/api/product`)
       .then((response) => {
         setProducts(response.data);
       })

@@ -7,11 +7,10 @@ import { CartContext } from '../context/cart.jsx'
 function ProductDetails() {
   const [product, setProduct] = useState([]);
   const { productid } = useParams();
-  const API_URL = "http://localhost:5005";
   const { cartItems, addToCart } = useContext(CartContext)
   const getProduct = () => {
     axios
-      .get(API_URL +`/api/product/${productid}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/product/${productid}`)
       .then((reponse) => 
       setProduct(reponse.data))
 
