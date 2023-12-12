@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={ <HomePage /> } />
         <Route path="/products" element={ <Product />  }/>
         <Route path="/product/:productid" element={  <ProductDetails />  } />
-        <Route path="/product/edit/:productId" element={ <IsPrivate> <EditProductPage /> </IsPrivate> } />
+        <Route path="/product/edit/:productid" element={  <EditProductPage /> } />
         <Route path="/addproduct" element={<AddProductPage/>}/>
         <Route path="/signup" element={ <IsAnon> <SignupPage /> </IsAnon> } />
         <Route path="/login" element={ <IsAnon> <LoginPage /> </IsAnon> } />

@@ -33,7 +33,7 @@ function ProductDetails() {
 
                 </div>
             </div>
-            {/* ABOUT */}
+            
             <div className='flex flex-col gap-4 lg:w-2/4'>
                 <div>
                     <span className=' text-violet-600 font-semibold'>{product.brand}</span>
@@ -53,6 +53,11 @@ function ProductDetails() {
                     addToCart(product)
                   }
                   } className='bg-violet-800 text-white font-semibold py-3 px-16 rounded-xl h-full'>Add to Cart</button>
+                </div>
+                <div>
+                <Link to={`/product/edit/${product._id}`}>
+                <button className='bg-violet-800 text-white font-semibold py-3 px-16 rounded-xl h-full'>Edit Product</button>
+              </Link>
                 </div>
             </div>
         </div>
