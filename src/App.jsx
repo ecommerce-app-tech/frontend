@@ -11,6 +11,8 @@ import Cart from "./components/Cart"
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import AddProductPage from "./pages/AddProductPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import Getorder from "./pages/Getorder";
 
 
  
@@ -29,6 +31,8 @@ function App() {
         <Route path="/addproduct" element={<AddProductPage/>}/>
         <Route path="/signup" element={ <IsAnon> <SignupPage /> </IsAnon> } />
         <Route path="/login" element={ <IsAnon> <LoginPage /> </IsAnon> } />
+        <Route path="/checkout" element={<CheckoutPage/>} />
+        <Route path="/orders" element={<Getorder/>}/>
        
       </Routes>
      

@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 
-export default function Products() {
+function Products() {
   const [showModal, setshowModal] = useState(false);
   const [products, setProducts] = useState([])
   const { cartItems, addToCart } = useContext(CartContext)
@@ -71,3 +71,4 @@ export default function Products() {
     </div>
   )
 }
+export default Products

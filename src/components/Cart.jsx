@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useContext,useState } from 'react'
 import { CartContext } from '../context/cart.jsx'
+import { Link } from "react-router-dom";
 
 
  function Cart ({showModal, toggle}) {
@@ -62,10 +63,12 @@ import { CartContext } from '../context/cart.jsx'
             Clear cart
           </button>
          <br></br>
+         <Link to={`/checkout`}>
           <button
             className='bg-violet-800 text-white font-semibold py-3 px-16 rounded-xl h-full'>
             Checkout
             </button>
+            </Link>
         </div>
           ) : (
             <h1 className="text-lg font-bold">Your cart is empty</h1>
