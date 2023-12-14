@@ -25,11 +25,11 @@ function NavbarComponent() {
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
           
-         
+          <Link to="/addproduct">Sell your Product</Link>
 
           {isLoggedIn && (
             <>
-              <Link to="/products">All Proroducts</Link>
+              
               <button onClick={logOutUser}>Logout</button>
               <span>{user && user.name}</span>
             </>
