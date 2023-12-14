@@ -27,12 +27,12 @@ function App() {
         <Route path="/" element={ <HomePage /> } />
         <Route path="/products" element={ <Product />  }/>
         <Route path="/product/:productid" element={  <ProductDetails />  } />
-        <Route path="/product/edit/:productid" element={  <EditProductPage /> } />
+        <Route path="/product/edit/:productid" element={ <IsPrivate> <EditProductPage /> </IsPrivate>} />
         <Route path="/addproduct" element={<AddProductPage/>}/>
         <Route path="/signup" element={ <IsAnon> <SignupPage /> </IsAnon> } />
         <Route path="/login" element={ <IsAnon> <LoginPage /> </IsAnon> } />
-        <Route path="/checkout" element={<CheckoutPage/>} />
-        <Route path="/orders" element={<Getorder/>}/>
+        <Route path="/checkout" element={<IsPrivate><CheckoutPage/></IsPrivate>} />
+        <Route path="/orders" element={<IsPrivate><Getorder/></IsPrivate>}/>
        
       </Routes>
      

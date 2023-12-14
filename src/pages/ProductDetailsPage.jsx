@@ -44,11 +44,8 @@ function ProductDetails() {
                 </p>
                 <h6 className='text-2xl font-semibold'>${product.price}</h6>
                 <div className='flex flex-row items-center gap-12'>
-                    <div className='flex flex-row items-center'>
-                        <button className='bg-gray-200 py-2 px-5 rounded-lg text-violet-800 text-3xl' onClick={() => setAmount((prev) => prev - 1)}>-</button>
-                        <span className='py-4 px-6 rounded-lg'>{product.price}</span>
-                        <button className='bg-gray-200 py-2 px-4 rounded-lg text-violet-800 text-3xl' onClick={() => setAmount((prev) => prev + 1)}>+</button>
-                    </div>
+                <div className='flex flex-row items-center gap-12'>
+                    
                     <button  onClick={() => {
                     addToCart(product)
                   }
@@ -58,6 +55,7 @@ function ProductDetails() {
                 <Link to={`/product/edit/${product._id}`}>
                 <button className='bg-violet-800 text-white font-semibold py-3 px-16 rounded-xl h-full'>Edit Product</button>
               </Link>
+                </div>
                 </div>
             </div>
         </div>
