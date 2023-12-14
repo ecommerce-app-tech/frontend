@@ -17,7 +17,7 @@ import Smartphonecat from "./components/Smartphonecat";
 import Computercat from "./components/Computercat";
 import Tablettcat from "./components/Tablettcat";
 import Smartwatchcat from "./components/Smartwatchcat";
-import Earphonescat from "./components/earphonescat";
+import Earphonescat from "./components/Earphonescat";
 
 
 
@@ -43,7 +43,7 @@ function App() {
         <Route path="/products/computers" element={<Computercat/>}/>
         <Route path="/products/Tablets" element={<Tablettcat/>}/>
         <Route path="/products/smartwatches" element={<Smartwatchcat/>}/>
-        <Route path="/products/earphones" element={<Earphonescat/>}/>
+        <Route path="/earphones" element={<Earphonescat/>}/>
       </Routes>
      
     </div>
