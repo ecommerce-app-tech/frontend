@@ -38,6 +38,7 @@ function NavbarComponent() {
                 <Link to="/products/Tablets"> Tablets</Link>
                 <Link to="/products/earphones"> Earphones </Link>
                 <Link to="/products/computers"> Computers </Link>
+                <Link to="/addproduct">Sell </Link>
               </div>
             </div>
             <div className="ml-10 space-x-4">
