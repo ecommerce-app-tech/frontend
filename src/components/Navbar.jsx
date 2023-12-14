@@ -4,8 +4,12 @@ import { AuthContext } from "../context/auth.context";
 import { Button, Navbar, Modal } from "react-bootstrap";
 import { CartContext } from "../context/cart.jsx";
 import Cart from "./Cart.jsx";
-import { BsCart2 } from "react-icons/bs";
+import Logo from "../assets/Logo.png"
 import { BsCartFill } from "react-icons/bs";
+
+
+
+
 function NavbarComponent() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext); // <== ADD
 
@@ -25,12 +29,14 @@ function NavbarComponent() {
           <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
             <div className="flex items-center">
               <a href="#">
-                <span className="sr-only">Workflow</span>
+               
+                <Link to={"/"}>
                 <img
-                  className="h-10 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
+                  className="h-40 w-auto"
+                  src={Logo}
                   alt=""
                 />
+                </Link>
               </a>
               <div className="hidden ml-10 space-x-8 lg:block">
                 <Link to="/products/smartphones"> Smartphones</Link>

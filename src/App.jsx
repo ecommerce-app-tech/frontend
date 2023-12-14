@@ -43,7 +43,7 @@ function App() {
         <Route path="/products/computers" element={<Computercat/>}/>
         <Route path="/products/Tablets" element={<Tablettcat/>}/>
         <Route path="/products/smartwatches" element={<Smartwatchcat/>}/>
-        <Route path="/earphones" element={<Earphonescat/>}/>
+        <Route path="/products/earphones" element={<Earphonescat/>}/>
       </Routes>
      
     </div>
