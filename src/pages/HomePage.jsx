@@ -90,9 +90,8 @@ function HomePage() {
             <div className="box-content py-2 relative h-80 overflow-x-auto xl:overflow-visible">
               <div className="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-5 xl:gap-x-8">
                 {categories.map((category) => (
-                  <a
-                    key={category.name}
-                    href={category.href}
+                  <Link to={category.href}>
+                  <a key={category.name}
                     className="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto"
                   >
                     <span aria-hidden="true" className="absolute inset-0">
@@ -104,6 +103,7 @@ function HomePage() {
                     />
                     <span className="relative mt-auto text-center text-xl font-bold text-white">{category.name}</span>
                   </a>
+                  </Link>
                 ))}
               </div>
             </div>
