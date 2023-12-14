@@ -18,33 +18,58 @@ function NavbarComponent() {
   
   return (
     <>
-      <Navbar className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4">
-        
-        <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        
-          <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
-          
-          <Link to="/addproduct">Sell your Product</Link>
-
-          {isLoggedIn && (
+       <header className="bg-white">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+        <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
+          <div className="flex items-center">
+            <a href="#">
+              <span className="sr-only">Workflow</span>
+              <img
+                className="h-10 w-auto"
+                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
+                alt=""
+              />
+            </a>
+            <div className="hidden ml-10 space-x-8 lg:block">
+      
+              <Link to="/products/smartphones"> Smartphones</Link>
+               <Link to="/products/smartwatches"> Smartwatches</Link>
+                <Link to="/products/Tablets"> Tablets</Link>
+                 <Link to="/products/earphones"> Earphones </Link>
+                  <Link to="/products/computers"> Computers </Link>
+            </div>
+          </div>
+          <div className="ml-10 space-x-4">
+            {isLoggedIn && (
             <>
               
               <button onClick={logOutUser}>Logout</button>
               <span>{user && user.name}</span>
             </>
           )}
-
           {!isLoggedIn && (
             <>
-              <Link to="/signup"> Sign Up</Link>
-              <Link to="/login"> <button className='bg-violet-800 text-white font-semibold py-2 px-8 rounded-xl h-full'>Login</button> </Link>
+              
             
-            </>
+           
+            <a
+              href="/login"
+              className="inline-block bg-indigo-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
+            >
+              Sign in
+            </a>
+            <a
+              href="/signup"
+              className="inline-block bg-white py-2 px-4 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50"
+            >
+              Sign up
+            </a>
+             </>
           )}
-         <div className='flex justify-between items-center px-20 py-5'>
-       
-       {!showModal && <button 
+          
+          </div>
+          <div>
+          {!showModal && <button 
          onClick={toggle}
        >  <BsCartFill />
        <a className="relative -top-2 -right-3 text-white bg-red-500 h-4 w-4 rounded-full m-1 p-1  text-sm text-center ">
@@ -54,8 +79,10 @@ function NavbarComponent() {
      </div>
      <Cart showModal={showModal} toggle={toggle} />
         </div>
-      </Navbar>
-      
+
+       
+      </nav>
+    </header>
     </>
   );
 }

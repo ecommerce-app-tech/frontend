@@ -19,10 +19,35 @@ function HomePage() {
       imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-fast-checkout-light.svg',
     },
   ]
+  const categories = [
+    {
+      name: 'Smartphones',
+      href: '/products/smartphones',
+      imageSrc: 'https://m-cdn.phonearena.com/images/article/64576-wide-two_1200/The-Best-Phones-to-buy-in-2023---our-top-10-list.jpg',
+    },
+    {
+      name: 'Smartwatches',
+      href: '/products/smartwatches',
+      imageSrc: 'https://img.europapress.es/fotoweb/fotonoticia_20230923105140_640.jpg',
+    },
+    {
+      name: 'Earphones',
+      href: 'products/earphones',
+      imageSrc: 'https://thumb.pccomponentes.com/w-530-530/articles/35/357782/1676-myway-wireless-pro-mwhph0028-auriculares-bluetooth-blancos.jpg',
+    },
+    {
+      name: 'Computers',
+      href: '/products/computers',
+      imageSrc: 'https://i.rtings.com/assets/pages/6S2WXjTl/best-laptop-medium.jpg',
+    },
+    { name: 'Tablets', 
+    href: '/products/Tablets', 
+    imageSrc: 'https://i.blogs.es/27028b/oppo-pad-2-review-xataka-analisis-portada/500_333.jpeg' },
+  ]
   return (
     <div className="bg-white">
       <div className="relative bg-gray-900">
-        {/* Decorative image and overlay */}
+        
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1550029402-8ea9bfe19f04?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -48,7 +73,52 @@ function HomePage() {
           </Link>
         </div>
       </div>
-      <div className="bg-gray-50">
+      
+    <br/>
+    
+    <div className="bg-white">
+      <div className="py-16 sm:py-24 xl:max-w-7xl xl:mx-auto xl:px-8">
+        <div className="px-4 sm:px-6 sm:flex sm:items-center sm:justify-between lg:px-8 xl:px-0">
+          <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Shop by Category</h2>
+          <a href="/products" className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+            Browse all Products <span aria-hidden="true"> &rarr;</span>
+          </a>
+        </div>
+
+        <div className="mt-4 flow-root">
+          <div className="-my-2">
+            <div className="box-content py-2 relative h-80 overflow-x-auto xl:overflow-visible">
+              <div className="absolute min-w-screen-xl px-4 flex space-x-8 sm:px-6 lg:px-8 xl:relative xl:px-0 xl:space-x-0 xl:grid xl:grid-cols-5 xl:gap-x-8">
+                {categories.map((category) => (
+                  <a
+                    key={category.name}
+                    href={category.href}
+                    className="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto"
+                  >
+                    <span aria-hidden="true" className="absolute inset-0">
+                      <img src={category.imageSrc} alt="" className="w-full h-full object-center object-cover" />
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-gray-800 opacity-50"
+                    />
+                    <span className="relative mt-auto text-center text-xl font-bold text-white">{category.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 px-4 sm:hidden">
+          <a href="/products" className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+            Browse all Products<span aria-hidden="true"> &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br></br>
+    <div className="bg-gray-50">
       <div className="max-w-7xl mx-auto py-24 sm:px-2 sm:py-32 lg:px-4">
         <div className="max-w-2xl mx-auto px-4 grid grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-3">
           {incentives.map((incentive) => (
@@ -64,48 +134,6 @@ function HomePage() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </div>
-    <br/>
-    <div className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
-        <div className="py-10 px-6 bg-indigo-700 rounded-3xl sm:py-16 sm:px-12 lg:p-20 lg:flex lg:items-center">
-          <div className="lg:w-0 lg:flex-1">
-            <h2 className="text-3xl font-extrabold tracking-tight text-white">Sign up for our newsletter</h2>
-            <p className="mt-4 max-w-3xl text-lg text-indigo-100">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet
-              fugiat.
-            </p>
-          </div>
-          <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
-            <form className="sm:flex">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email-address"
-                type="email"
-                autoComplete="email"
-                required
-                className="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white rounded-md"
-                placeholder="Enter your email"
-              />
-              <button
-                type="submit"
-                className="mt-3 w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white sm:mt-0 sm:ml-3 sm:w-auto sm:flex-shrink-0"
-              >
-                Notify me
-              </button>
-            </form>
-            <p className="mt-3 text-sm text-indigo-100">
-              We care about the protection of your data. Read our{' '}
-              <a href="#" className="text-white font-medium underline">
-                Privacy Policy.
-              </a>
-            </p>
-          </div>
         </div>
       </div>
     </div>
