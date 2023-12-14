@@ -2,10 +2,11 @@ import { useState,useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from '../context/cart.jsx'
+import { AuthContext } from "../context/auth.context.jsx";
 
 
 function CheckoutPage() {
-  const [user, setUser] = useState("");
+  
   const [shippingAddress, setShippingAddress] = useState("");
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
@@ -15,11 +16,13 @@ function CheckoutPage() {
 
   const {  getCartTotal,cartItems } = useContext(CartContext)
   const navigate = useNavigate();
-
+  const {user } = useContext(AuthContext)
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestBody = {
-    user: user,
+   
+    user: user._id,
     shippingAddress: shippingAddress,
     country: country,
     city: city,
@@ -32,7 +35,7 @@ function CheckoutPage() {
     axios
       .post(`${import.meta.env.VITE_API_URL}/api/order`, requestBody)
       .then(() => {
-        navigate("/addorder");
+        navigate("/orders");
       })
       .catch((error) => console.log(error));
   };
@@ -239,7 +242,7 @@ function CheckoutPage() {
               </div>
 
               <div className="mt-10 flex justify-end pt-6 border-t border-gray-200">
-                <Link to={"/"}>
+                
                 <button
                   type="submit"
                   className="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
@@ -247,7 +250,7 @@ function CheckoutPage() {
                 >
                   Add Order
                 </button>
-                </Link>
+                
               </div>
             </div>
           </form>

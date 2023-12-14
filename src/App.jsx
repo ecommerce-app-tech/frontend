@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import AddProductPage from "./pages/AddProductPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import Getorder from "./pages/Getorder";
+import Smartphonecat from "./components/Smartphonecat";
 
 
  
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={ <IsAnon> <LoginPage /> </IsAnon> } />
         <Route path="/checkout" element={<IsPrivate><CheckoutPage/></IsPrivate>} />
         <Route path="/orders" element={<IsPrivate><Getorder/></IsPrivate>}/>
+        <Route path ="/smartphone" element={<Smartphonecat/>}/>
        
       </Routes>
      

@@ -47,8 +47,13 @@ function Products() {
                 <h3 className="text-sm  text-gray-700">{product.name}</h3>
                 
                 <p className='mt-2 text-gray-600'>${product.price}</p>
+              
               </div>
+              <div className="mt-4 flex justify-between">
               <p className="mt-1 text-sm text-gray-500">{product.brand}</p>
+              <p className="mt-1 text-sm text-gray-500">{product.category}</p>
+              
+              </div>
               <div className='mt-6 flex justify-between items-center'>
                 <button className='px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
                   onClick={() => {
