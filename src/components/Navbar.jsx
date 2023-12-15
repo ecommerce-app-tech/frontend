@@ -21,18 +21,29 @@ function NavbarComponent() {
 
   return (
     <>
-      <header className="bg-white">
-        <nav
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          aria-label="Top"
-        >
+      <div className="bg-white">
+      <header className="relative bg-white">
+        <nav aria-label="Top" className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+          <div className="border-b border-gray-200 px-4 pb-14 sm:px-0 sm:pb-0">
+            <div className="h-16 flex items-center justify-between">
+              {/* Logo */}
+              <div className="flex-1 flex">
+                <a href="#">
+                  <span className="sr-only">Workflow</span>
+                  <img
+                    className="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                    alt=""
+                  />
+                </a>
+              </div>
           <div className="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none">
             <div className="flex items-center">
               <a href="#">
                
                 <Link to={"/"}>
                 <img
-                  className="h-40 w-auto"
+                  className="h-10 w-auto"
                   src={Logo}
                   alt=""
                 />
@@ -84,8 +95,12 @@ function NavbarComponent() {
             </div>
             <Cart showModal={showModal} toggle={toggle} />
           </div>
-        </nav>
+          </div>
+          </div>
+          </nav>
       </header>
+      </div>
+      <br></br>
     </>
   );
 }

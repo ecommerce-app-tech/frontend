@@ -50,7 +50,7 @@ function HomePage() {
         
         <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1550029402-8ea9bfe19f04?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1565995487495-e2a23f3af2ee?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBob25lJTIwbGFwdG9wfGVufDB8fDB8fHww"
             alt=""
             className="w-full h-full object-center object-cover"
           />
@@ -60,7 +60,7 @@ function HomePage() {
         <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
           <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">New arrivals are here</h1>
           <p className="mt-4 text-xl text-white">
-            The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release
+            The new arrivals have, well, newly arrived. Check out the latest options from our Winter small-batch release
             while they're still in stock.
           </p>
           <Link to={"/products"}>
