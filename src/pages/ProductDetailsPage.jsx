@@ -38,6 +38,7 @@ function ProductDetails() {
                 <div>
                     <span className=' text-violet-600 font-semibold'>{product.brand}</span>
                     <h1 className='text-3xl font-bold'>{product.name}</h1>
+                    <span className=' text-violet-600 font-semibold'>{product.category}</span>
                 </div>
                 <p className='text-gray-700'>
                   {product.description}
