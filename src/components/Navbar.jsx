@@ -23,7 +23,7 @@ function NavbarComponent() {
     <>
       <div className="bg-white">
       <header className="relative bg-white">
-        <nav aria-label="Top" className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <nav aria-label="Top" className="max-w-10xl mx-auto sm:px-6 lg:px-8">
           <div className="border-b border-gray-200 px-4 pb-14 sm:px-0 sm:pb-0">
             <div className="h-16 flex items-center justify-between">
               {/* Logo */}
@@ -50,19 +50,37 @@ function NavbarComponent() {
                 </Link>
               </a>
               <div className="hidden ml-10 space-x-8 lg:block">
-                <Link to="/products/smartphones"> Smartphones</Link>
-                <Link to="/products/smartwatches"> Smartwatches</Link>
-                <Link to="/products/Tablets"> Tablets</Link>
-                <Link to="/products/earphones"> Earphones </Link>
-                <Link to="/products/computers"> Computers </Link>
-                <Link to="/addproduct">Sell </Link>
+
+              <Link to="/products"> <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800">
+              All Products
+      </span></Link>
+                <Link to="/products/smartphones"> <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800">
+        Smartphones
+      </span></Link>
+                <Link to="/products/smartwatches"><span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800">
+        Smartwatches
+      </span></Link>
+                <Link to="/products/Tablets"> <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800">
+        Tablets
+      </span></Link>
+                <Link to="/products/earphones"> <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800">
+        Earphones
+      </span> </Link>
+                <Link to="/products/computers"><span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-gray-100 text-gray-800">
+        Computers
+      </span> </Link>
+               
               </div>
             </div>
             <div className="ml-10 space-x-4">
               {isLoggedIn && (
                 <>
-                  <button onClick={logOutUser}>Logout</button>
-                  <span>{user && user.name}</span>
+                  <button onClick={logOutUser}><span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+                  Logout
+      </span></button>
+                  <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">{user && user.name}</span>
+                  <Link to="/addproduct">Sell </Link>
+                  <Link to="/orders"> Orders history</Link>
                 </>
               )}
               {!isLoggedIn && (

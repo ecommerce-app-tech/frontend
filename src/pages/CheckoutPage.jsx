@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from '../context/cart.jsx'
 import { AuthContext } from "../context/auth.context.jsx";
+import Logo from "../assets/Logo.png"
 
 
 function CheckoutPage() {
@@ -50,12 +51,12 @@ function CheckoutPage() {
           <a href="#">
             <span className="sr-only">Workflow</span>
             <img
-              src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=300"
+              src={Logo}
               alt=""
               className="h-8 w-auto lg:hidden"
             />
             <img
-              src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+              src={Logo}
               alt=""
               className="hidden lg:block h-8 w-auto"
             />
