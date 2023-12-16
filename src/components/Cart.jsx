@@ -124,7 +124,7 @@ function Cart({ showModal, toggle }) {
                             clearCart();
                           }}
                         >
-                         Clear Cart
+                          Clear Cart
                         </button>
                       </div>
                       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
@@ -136,15 +136,14 @@ function Cart({ showModal, toggle }) {
                           Shipping and taxes Included.
                         </p>
                         <div className="mt-6">
-                        <Link to={`/checkout`}>
-                          <a
-                            href="#"
-                            className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                            onClick={toggle}
-
-                          >
-                            Checkout
-                          </a>
+                          <Link to={`/checkout`}>
+                            <a
+                              href="#"
+                              className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                              onClick={toggle}
+                            >
+                              Checkout
+                            </a>
                           </Link>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
